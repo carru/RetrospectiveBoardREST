@@ -1,0 +1,38 @@
+{
+  "name": "category",
+  "plural": "categories",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "colour": {
+      "type": "string"
+    },
+    "points": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "topics": {
+      "type": "hasMany",
+      "model": "topic",
+      "foreignKey": "categoryId",
+      "options": {
+        "nestRemoting": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

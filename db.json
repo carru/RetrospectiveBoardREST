@@ -1,0 +1,30 @@
+{
+  "ids": {
+    "User": 1,
+    "AccessToken": 1,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "topic": 26,
+    "category": 6
+  },
+  "models": {
+    "User": {},
+    "AccessToken": {},
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "topic": {
+      "1": "{\"id\":1,\"text\":\"long standups\",\"categoryId\":1}",
+      "19": "{\"id\":19,\"text\":\"go to meeting is awful\",\"categoryId\":5}",
+      "20": "{\"id\":20,\"text\":\"google meet is the best thing since sliced bread\",\"categoryId\":5}",
+      "21": "{\"id\":21,\"text\":\"I miss Steve's alien voice\",\"categoryId\":1}",
+      "24": "{\"text\":\"something\",\"id\":24}",
+      "25": "{\"text\":\"something else\",\"id\":25}"
+    },
+    "category": {
+      "1": "{\"id\":1,\"name\":\"SCRUM\",\"colour\":\"#8bdaff\",\"points\":1}",
+      "5": "{\"id\":5,\"name\":\"undeniable truths\",\"colour\":\"#faff7f\",\"points\":2}"
+    }
+  }
+}
