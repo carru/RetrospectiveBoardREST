@@ -4,6 +4,8 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 app.start = function() {
   // start the web server
@@ -15,6 +17,11 @@ app.start = function() {
       var explorerPath = app.get('loopback-component-explorer').mountPath;
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
     }
+
+    // Start socket server
+    http.listen(3001, function(){
+      console.log('Socket server listening on *:3001');
+    });
   });
 };
 
@@ -26,4 +33,11 @@ boot(app, __dirname, function(err) {
   // start the server if `$ node server.js`
   if (require.main === module)
     app.start();
+});
+
+io.on("connection", socket => {
+  
+  socket.on('dataChanged', () => {
+    socket.broadcast.emit('dataChanged');
+  });
 });
