@@ -19,7 +19,7 @@ app.start = function() {
     }
 
     // Start socket server
-    http.listen(3001, function(){
+    http.listen(3001, function() {
       console.log('Socket server listening on *:3001');
     });
   });
@@ -35,8 +35,7 @@ boot(app, __dirname, function(err) {
     app.start();
 });
 
-io.on("connection", socket => {
-  
+io.on('connection', socket => {
   socket.on('dataChanged', () => {
     socket.broadcast.emit('dataChanged');
   });
